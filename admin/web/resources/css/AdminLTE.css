@@ -2802,3 +2802,13 @@ Component: timeline
 .pace-inactive {
   display: none;
 }
+
+/* Users list page */
+.user_name {
+  width: 50%;
+  float: left;
+}
+
+.udel {
+  float: right;
+}

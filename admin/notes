@@ -1,0 +1,13 @@
+Désactiver le mode Debog dans src/app.php
+Supprimer mes infos SQL dans src/app.php et config/local.php
+
+___________________________________________________________________
+Voir la fonction reset password
+
+
+Comment supprimer des utilisateur
+    - La fonction delete se trouve dans le fichier UserManager.php ligne 552
+
+Traduire le dashboard
+
+Créer une page pour les accès non-autorisés

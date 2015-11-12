@@ -10,64 +10,64 @@
  * file that was distributed with this source code.
  */
 
-
 require_once __DIR__.'/../../../vendor/autoload.php';
 require_once __DIR__.'/../../../src/app.php';
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-$app->match('/modules/list', function (Symfony\Component\HttpFoundation\Request $request) use ($app) {  
+
+$app->match('/modules/list', function (Symfony\Component\HttpFoundation\Request $request) use ($app) {
     $start = 0;
     $vars = $request->query->all();
     $qsStart = (int)$vars["start"];
     $search = $vars["search"];
     $order = $vars["order"];
     $columns = $vars["columns"];
-    $qsLength = (int)$vars["length"];    
-    
+    $qsLength = (int)$vars["length"];
+
     if($qsStart) {
         $start = $qsStart;
-    }    
-	
-    $index = $start;   
+    }
+
+    $index = $start;
     $rowsPerPage = $qsLength;
-       
+
     $rows = array();
-    
+
     $searchValue = $search['value'];
     $orderValue = $order[0];
-    
+
     $orderClause = "";
     if($orderValue) {
         $orderClause = " ORDER BY ". $columns[(int)$orderValue['column']]['data'] . " " . $orderValue['dir'];
     }
-    
+
     $table_columns = array(
-		'id', 
-		'module_name', 
+		'id',
+		'module_name',
 
     );
-    
+
     $whereClause = "";
-    
+
     $i = 0;
     foreach($table_columns as $col){
-        
+
         if ($i == 0) {
            $whereClause = " WHERE";
         }
-        
+
         if ($i > 0) {
-            $whereClause =  $whereClause . " OR"; 
+            $whereClause =  $whereClause . " OR";
         }
-        
+
         $whereClause =  $whereClause . " " . $col . " LIKE '%". $searchValue ."%'";
-        
+
         $i = $i + 1;
     }
-    
+
     $recordsTotal = $app['db']->executeQuery("SELECT * FROM `modules`" . $whereClause . $orderClause)->rowCount();
-    
+
     $find_sql = "SELECT * FROM `modules`". $whereClause . $orderClause . " LIMIT ". $index . "," . $rowsPerPage;
     $rows_sql = $app['db']->fetchAll($find_sql, array());
 
@@ -78,14 +78,14 @@ $app->match('/modules/list', function (Symfony\Component\HttpFoundation\Request 
 
 
         }
-    }    
-    
+    }
+
     $queryData = new queryData();
     $queryData->start = $start;
     $queryData->recordsTotal = $recordsTotal;
     $queryData->recordsFiltered = $recordsTotal;
     $queryData->data = $rows;
-    
+
     return new Symfony\Component\HttpFoundation\Response(json_encode($queryData), 200);
 });
 
