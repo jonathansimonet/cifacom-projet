@@ -1,0 +1,194 @@
+@charset "UTF-8";
+.background-size(@size) {
+	-webkit-background-size:@size;
+	-moz-background-size:@size;
+	-o-background-size:@size;
+	background-size:@size;
+}
+.background-origin(@origin) {
+	-webkit-background-origin:@origin;
+	-moz-background-origin:@origin;
+	-o-background-origin:@origin;
+	background-origin:@origin;
+}
+.degrade-top-to-bottom(@color1, @color2) {
+	background-image: -webkit-linear-gradient(top,@color1,@color2);
+	background-image: -moz-linear-gradient(top,@color1,@color2);
+	background-image: -ms-linear-gradient(top,@color1,@color2);
+	background-image: -o-linear-gradient(top,@color1,@color2);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@{color1}',endColorstr='@{color2}',GradientType=0);
+	background-image: linear-gradient(to bottom,@color1,@color2);
+}
+.degrade-top-to-bottom-3-colors(@color1, @color2, @color3) {
+	background-image: -webkit-linear-gradient(top,@color1,@color2,@color3);
+	background-image: -moz-linear-gradient(top,@color1,@color2,@color3);
+	background-image: -ms-linear-gradient(top,@color1,@color2,@color3);
+	background-image: -o-linear-gradient(top,@color1,@color2,@color3);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@{color1}',endColorstr='@{color2}',GradientType=0);
+	background-image: linear-gradient(to bottom,@color1,@color2,@color3);
+}
+.degrade-left-to-right(@color1, @color2) {
+	background-image: -webkit-linear-gradient(left,@color1,@color2);
+	background-image: -moz-linear-gradient(left,@color1,@color2);
+	background-image: -ms-linear-gradient(left,@color1,@color2);
+	background-image: -o-linear-gradient(left,@color1,@color2);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@{color1}',endColorstr='@{color2}',GradientType=1);
+	background-image: linear-gradient(to right,@color1,@color2);
+}
+.degrade-left-to-right-3-colors(@color1, @color2, @color3) {
+	background-image: -webkit-linear-gradient(left,@color1,@color2,@color3);
+	background-image: -moz-linear-gradient(left,@color1,@color2,@color3);
+	background-image: -ms-linear-gradient(left,@color1,@color2,@color3);
+	background-image: -o-linear-gradient(left,@color1,@color2,@color3);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@{color1}',endColorstr='@{color2}',GradientType=1);
+	background-image: linear-gradient(to right,@color1,@color2,@color3);
+}
+.animation(@value) {
+	-webkit-animation: @value;
+	-moz-animation: @value;
+	-ms-animation: @value;
+	-o-animation: @value;
+	animation: @value;
+}
+.animation-delay(@value) {
+	-webkit-animation-delay:@value;
+	-moz-animation-delay:@value;
+	-ms-animation-delay:@value;
+	-o-animation-delay:@value;
+	animation-delay:@value;
+}
+.animation-duration(@value) {
+	-webkit-animation-duration:@value;
+	-moz-animation-duration:@value;
+	-ms-animation-duration:@value;
+	-o-animation-duration:@value;
+	animation-duration:@value;
+}
+.animation-name(@value) {
+	-webkit-animation-name:@value;
+	-moz-animation-name:@value;
+	-ms-animation-name:@value;
+	-o-animation-name:@value;
+	animation-name:@value;
+}
+.animation-timing-function(@value) {
+	-webkit-animation-timing-function:@value;
+	-moz-animation-timing-function:@value;
+	-ms-animation-timing-function:@value;
+	-o-animation-timing-function:@value;
+	animation-timing-function:@value;
+}
+.border-radius(@radius) {
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	border-radius:@radius;
+}
+.transition(@property,@time,@timing-function) {
+	-webkit-transition: @property @time @timing-function;
+	-moz-transition: @property @time @timing-function;
+	-o-transition: @property @time @timing-function;
+	-ms-transition: @property @time @timing-function;
+	transition: @property @time @timing-function;
+}
+.scale(@value) {
+	-webkit-transform:scale(@value);
+	-moz-transform:scale(@value);
+	-ms-transform:scale(@value);
+	-o-transform:scale(@value);
+	transform:scale(@value);
+}
+.rotateY(@value) {
+	-webkit-transform:rotateY(@value);
+	-moz-transform:rotateY(@value);
+	-ms-transform:rotateY(@value);
+	-o-transform:rotateY(@value);
+	transform:rotateY(@value);
+}
+.rotateX(@value) {
+	-webkit-transform:rotateX(@value);
+	-moz-transform:rotateX(@value);
+	-ms-transform:rotateX(@value);
+	-o-transform:rotateX(@value);
+	transform:rotateX(@value);
+}
+.rotate(@value) {
+	-webkit-transform:rotate(@value);
+	-moz-transform:rotate(@value);
+	-ms-transform:rotate(@value);
+	-o-transform:rotate(@value);
+	transform:rotate(@value);
+}
+.transform(@transform){
+	-webkit-transform:@transform;
+	-moz-transform:@transform;
+	-ms-transform:@transform;
+	-o-transform:@transform;
+	transform:@transform;
+}
+.translateX(@x){
+	-webkit-transform:translateX(@x) translateZ(0) scale(1.0, 1.0);
+	-moz-transform:translateX(@x) translateZ(0) scale(1.0, 1.0);
+	-ms-transform:translateX(@x) translateZ(0) scale(1.0, 1.0);
+	-o-transform:translateX(@x) translateZ(0) scale(1.0, 1.0);
+	transform:translateX(@x) translateZ(0) scale(1.0, 1.0);
+}
+.translateY(@y){
+	-webkit-transform:translateY(@y) translateZ(0) scale(1.0, 1.0);
+	-moz-transform:translateY(@y) translateZ(0) scale(1.0, 1.0);
+	-ms-transform:translateY(@y) translateZ(0) scale(1.0, 1.0);
+	-o-transform:translateY(@y) translateZ(0) scale(1.0, 1.0);
+	transform:translateY(@y) translateZ(0) scale(1.0, 1.0);
+}
+.translateZ(@z){
+	-webkit-transform:translateZ(@z) scale(1.0, 1.0);
+	-moz-transform:translateZ(@z) scale(1.0, 1.0);
+	-ms-transform:translateZ(@z) scale(1.0, 1.0);
+	-o-transform:translateZ(@z) scale(1.0, 1.0);
+	transform:translateZ(@z) scale(1.0, 1.0);
+}
+.perspective(@px) {
+	-webkit-perspective:@px;
+	-moz-perspective:@px;
+	-perspective:@px;
+}
+.transform-style(@value) {
+	-webkit-transform-style: @value;
+	-moz-transform-style: @value;
+	transform-style: @value;
+}
+.calc-width(@calc, @val:auto) {
+	width:@val;
+	width:~"-webkit-calc(@{calc})";
+	width:~"-moz-calc(@{calc})";
+	width:~"calc(@{calc})";
+}
+.calc-height(@calc, @val:auto) {
+	height:@val;
+	height:~"-webkit-calc(@{calc})";
+	height:~"-moz-calc(@{calc})";
+	height:~"calc(@{calc})";
+}
+.calc-top(@calc, @val:auto) {
+	top:@val;
+	top:~"-webkit-calc(@{calc})";
+	top:~"-moz-calc(@{calc})";
+	top:~"calc(@{calc})";
+}
+.calc-bottom(@calc, @val:auto) {
+	bottom:@val;
+	bottom:~"-webkit-calc(@{calc})";
+	bottom:~"-moz-calc(@{calc})";
+	bottom:~"calc(@{calc})";
+}
+.calc-left(@calc, @val:auto) {
+	left:@val;
+	left:~"-webkit-calc(@{calc})";
+	left:~"-moz-calc(@{calc})";
+	left:~"calc(@{calc})";
+}
+.calc-right(@calc, @val:auto) {
+	right:@val;
+	right:~"-webkit-calc(@{calc})";
+	right:~"-moz-calc(@{calc})";
+	right:~"calc(@{calc})";
+}

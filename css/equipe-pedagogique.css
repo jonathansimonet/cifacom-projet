@@ -1,0 +1,230 @@
+@charset "UTF-8";
+body {
+  position: relative;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  line-height: 4em;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 2;
+}
+header .logo {
+  position: absolute;
+  top: 0;
+  left: 2%;
+  width: 15%;
+  height: 100%;
+  line-height: 4em;
+  text-align: center;
+}
+header .logo img {
+  max-width: 100%;
+}
+header ul {
+  position: absolute;
+  top: 0;
+  left: 18%;
+  width: 72%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+header li {
+  display: inline-block;
+  margin: 0 1.2%;
+}
+header li a {
+  color: #fff;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+}
+header li a:hover,
+header li a.active {
+  color: #d85424;
+}
+.presentation {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35em;
+}
+.presentation >div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#equipe {
+  position: relative;
+  margin: 0;
+  background-color: #1a171b;
+  width: 100%;
+  padding-bottom: 2em;
+}
+#equipe h1 {
+  position: relative;
+  padding: 1em;
+  font-size: 2em;
+  font-family: 'TypFourteenFiftyOne-Bold', sans-serif;
+  text-align: center;
+}
+#equipe .equipe {
+  position: relative;
+  display: inline-block;
+  width: 29.5%;
+  margin-top: 1em;
+  text-align: center;
+}
+#equipe .equipe img {
+  width: 5em;
+  height: 5em;
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  border-radius: 5em;
+}
+#equipe .equipe .desc {
+  display: inline-block;
+  font-size: 0.8em;
+  text-align: left;
+  margin-left: 1.5em;
+}
+#equipe .equipe .desc .name {
+  font-family: 'TypFourteenFiftyOne-Bold', sans-serif;
+}
+#equipe .equipe .desc .intervenant {
+  color: #d85424;
+}
+#equipe .equipe:nth-child(2n) {
+  margin-left: 20%;
+}
+footer {
+  position: relative;
+}
+footer .map {
+  position: relative;
+  width: 100%;
+  height: 13em;
+  background: url('../img/map.jpg') no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+footer form {
+  position: absolute;
+  top: 7em;
+  left: 38%;
+  width: 24%;
+  background-color: #f8f7f7;
+  padding: 1.5% 2%;
+  text-align: center;
+  z-index: 2;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+footer form h3 {
+  font-size: 1.5em;
+  color: #1a171b;
+  font-family: 'TypFourteenFiftyOne-Bold', sans-serif;
+  margin-bottom: 1em;
+}
+footer form h3 span {
+  color: #e7511e;
+}
+footer form input,
+footer form textarea {
+  display: block;
+  font-size: 0.9em;
+}
+footer form input[type="text"],
+footer form input[type="email"],
+footer form textarea {
+  background-color: white;
+  color: #7c7c7c;
+  font-family: 'TypFourteenFiftyOne-Bold', sans-serif;
+  margin: 0.6em 0;
+  width: 100%;
+  padding: 0.3em 0.6em;
+}
+footer form textarea {
+  height: 4em;
+  resize: none;
+  border: 0 none;
+  outline: 0 none;
+}
+footer form button {
+  margin-top: 0.7em;
+  font-size: 1.1em;
+  padding: 0.4em 0.8em;
+  background-color: #e7511e;
+  font-family: 'TypFourteenFiftyOne-Bold', sans-serif;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+footer .bottom {
+  position: relative;
+  width: 100%;
+  height: 14em;
+  background-color: #1a171b;
+  color: #686868;
+}
+footer .bottom .left {
+  position: absolute;
+  top: 2em;
+  right: 63.6%;
+}
+footer .bottom .left >img {
+  margin-bottom: 1em;
+  max-width: 10em;
+}
+footer .bottom .left ul,
+footer .bottom .left li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+footer .bottom .left li {
+  display: inline-block;
+}
+footer .bottom .left li img {
+  margin: 1.3em 0.1em;
+}
+footer .bottom .right {
+  position: absolute;
+  top: 2em;
+  left: 63.6%;
+  font-size: 0.8em;
+  text-align: left;
+}
+footer .bottom .right div {
+  margin-left: 1.8em;
+  line-height: 1.5em;
+}
+footer .bottom .right div img {
+  position: absolute;
+  left: 0;
+  height: 1.5em;
+}
+footer .bottom .right div.tel {
+  margin-top: 1.4em;
+}
+footer .bottom .right div.tel img {
+  height: 1.3em;
+}

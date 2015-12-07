@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c4e10934-c943-4389-af05-3c014efff5a4" name="jonathansimonet" url="http://www.jonathansimonet.com">
+        <fileTransfer host="www.jonathansimonet.com" port="21" rootFolder="/cifacom-projet" username="u78799380">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

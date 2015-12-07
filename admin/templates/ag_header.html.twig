@@ -1,0 +1,32 @@
+<header class="header">
+    <a href="" class="logo">Cifacom Admin</a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+
+        <!-- Sidebar toggle button-->
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">
+
+            {% if app.user %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Bonjour, {{ app.user.displayName }}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ path('user') }}"><span class="glyphicon glyphicon-user"></span> Voir votre profil</a></li>
+                        <li><a href="{{ path('user.edit', { id: app.user.id }) }}"><span class="glyphicon glyphicon-edit"></span> Modifier votre profil</a></li>
+                        <li><a href="{{ path('user.logout') }}"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
+                    </ul>
+                </li>
+            {% endif %}
+        </ul>
+
+    </nav>
+</header>
