@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="c4e10934-c943-4389-af05-3c014efff5a4" name="jonathansimonet" url="http://www.jonathansimonet.com">
-        <fileTransfer host="www.jonathansimonet.com" port="21" rootFolder="/cifacom-projet" username="u78799380">
+        <fileTransfer host="www.jonathansimonet.com" port="21" rootFolder="/cifacom-projet" password="df93df9ddf9bdfc0dfc5dfc0dfc5dfcedfcbdfd8dfc1dfd3" username="u78799380">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

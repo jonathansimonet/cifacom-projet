@@ -13,8 +13,24 @@ require 'include/MysqliRessource.php';
 require 'include/ModelMysqli.php';
 require 'include/ProjetMysqli.php';
 $projetMysqli = new ProjetMysqli();
-$count = $projetMysqli->countProject();
-$projets = $projetMysqli->selectAll();
+$formation = null;
+$labelform = '';
+if (isset($_GET['f']) && !empty($_GET['f']))
+{
+	$formation = $_GET['f'];
+}
+
+if($formation == 'mont')
+{
+	$labelform = "Monteur/Truquistes";
+
+}elseif($formation == 'real')
+{
+	$labelform = "Réalisateur";
+}
+
+$projets = $projetMysqli->selectAll($formation);
+$count = count($projets);
 $total = 1;
 if (!empty($count)) {
 	$total = $count;
@@ -39,7 +55,7 @@ if (isset($_GET['p']) && is_numeric($_GET['p'])) {
 $start = ($current * $epp - $epp);
 
 // Récupération des données à afficher pour la page courante
-$projets = $projetMysqli->selectForCurrentPage($start, $epp);
+$projets = $projetMysqli->selectForCurrentPage($start, $epp, $formation);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -67,17 +83,17 @@ $projets = $projetMysqli->selectForCurrentPage($start, $epp);
 		<header>
 			<nav>
 				<div class="logo">
-					<a href="http://www.cifacom.com/">
+					<a href="index.php">
 						<img src="img/logo.png" alt="Cifacom">
 					</a>
 				</div>
 				<ul>
 					<li><a href="index.php">Accueil</a></li>
-					<li><a href="equipe-pedagogique.php">Equipe pédagogique</a></li>
 					<li><a href="formation-realisateur-audiovisuel.php">Formation Réalisateur</a></li>
 					<li><a href="formation-monteur-truquiste.php">Formation monteur truquiste</a></li>
 					<li><a href="projets-realises.php" class="active">Projets réalisés</a></li>
 					<li><a href="#contact">Contactez-nous</a></li>
+					<li><a href="equipe-pedagogique.php">Equipe pédagogique</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -91,7 +107,7 @@ $projets = $projetMysqli->selectForCurrentPage($start, $epp);
 			</h1>
 		</section>
 		<section class="videos">
-			<h2>Projets réalisés</h2>
+			<h2>Projets réalisés<?php if($labelform) echo ' en formation '.$labelform ?></h2>
 			<?php foreach($projets as $v): ?>
 			<a href="video.php?id=<?=$v['id']?>" class="video" style="background-image: url('<?=$v['video_image_link']?>')">
 				<div class="play">

@@ -32,17 +32,17 @@ $projets = $projetMysqli->selectLast3Mt();
 		<header>
 			<nav>
 				<div class="logo">
-					<a href="http://www.cifacom.com/">
+					<a href="index.php">
 						<img src="img/logo.png" alt="Cifacom">
 					</a>
 				</div>
 				<ul>
 					<li><a href="index.php">Accueil</a></li>
-					<li><a href="equipe-pedagogique.php">Equipe pédagogique</a></li>
 					<li><a href="formation-realisateur-audiovisuel.php">Formation Réalisateur</a></li>
 					<li><a href="formation-monteur-truquiste.php" class="active">Formation monteur truquiste</a></li>
 					<li><a href="projets-realises.php">Projets réalisés</a></li>
 					<li><a href="#contact">Contactez-nous</a></li>
+					<li><a href="equipe-pedagogique.php">Equipe pédagogique</a></li>
 				</ul>
 			</nav>
 		</header>
