@@ -35,7 +35,7 @@ $total = 1;
 if (!empty($count)) {
 	$total = $count;
 }
-$epp = 10; // nombre d'entrées à afficher par page (entries per page)
+$epp = 10000; // nombre d'entrées à afficher par page (entries per page)
 $nbPages = ceil($total/$epp);
 $current = 1;
 if (isset($_GET['p']) && is_numeric($_GET['p'])) {

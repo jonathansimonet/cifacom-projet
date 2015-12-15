@@ -2,6 +2,7 @@
 require 'include/lessc.php';
 try {
     lessc::ccompile('less/index.less', 'css/index.css');
+	lessc::ccompile('less/etudiants.less', 'css/etudiants.css');
 }
 catch (exception $ex) {
     exit('lessc fatal error:'.$ex->getMessage());
@@ -23,6 +24,7 @@ $etudiants = $etudiantMysqli->selectAllMt();
 		<link rel="stylesheet" href="css/normalize.min.css">
 		<link rel="stylesheet" href="css/base.css">
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/etudiants.css">
 		<style>
 			.videos h2 {
 				margin: 1em 0;
@@ -64,15 +66,17 @@ $etudiants = $etudiantMysqli->selectAllMt();
 		</section>
 		<section class="videos">
 			<h2>Etudiants en formation monteur truquiste</h2>
-			<ul>
-				<?php foreach($etudiants as $v): ?>
-					<?php $url = $v['website'] ?>
-					<?php if(!strpos($v['website'],'http')): ?>
-						<?php $url = 'http://'.$v['website'] ?>
-					<?php endif; ?>
-					<li><a href="<?=$url?>" target="_blank"><?=$v['firstname']?> <?=$v['name']?></a></li>
-				<?php endforeach ?>
-			</ul>
+			<div class="list-etudiants">
+				<ul class="list-etudiants">
+					<?php foreach($etudiants as $v): ?>
+						<?php $url = $v['website'] ?>
+						<?php if(!strpos($v['website'],'http')): ?>
+							<?php $url = 'http://'.$v['website'] ?>
+						<?php endif; ?>
+						<li class="etudiants"><a href="<?=$url?>" target="_blank"><?=$v['firstname']?> <?=$v['name']?></a></li>
+					<?php endforeach ?>
+				</ul>
+			</div>
 		</section>
 		<div class="clear"></div>
 		<footer>

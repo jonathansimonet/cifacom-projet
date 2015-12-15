@@ -1,0 +1,30 @@
+div.list-etudiants{
+	width: 900px;
+  margin: 0 auto;
+  overflow: auto;
+  margin-bottom: 100px;
+}
+
+ul.list-etudiants{
+  list-style-type: none;
+}
+  li.etudiants{
+    float: left;
+    margin: 10px;
+    border-bottom: 1px solid #fff;
+    background-color: black;
+    width : 150px;
+    height: 25px;
+    text-align : center;
+    -webkit-transition: box-shadow 0.5s ease;
+    -moz-transition: box-shadow 0.5s ease;
+    -o-transition: box-shadow 0.5s ease;
+    -ms-transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease;
+  }
+  
+  li.etudiants:hover{
+    -webkit-box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
+    box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
+  }
+

@@ -150,7 +150,7 @@ $app->match('/students/create', function () use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "INSERT INTO `students` (`firstname`, `name`, `website`, `filiere`) VALUES (?, ?, ?, ?, ?)";
+            $update_query = "INSERT INTO `students` (`firstname`, `name`, `website`, `filiere`,`promotion`) VALUES (?, ?, ?, ?, ?)";
             $app['db']->executeUpdate($update_query, array($data['firstname'], $data['name'], $data['website'], $data['filiere'], $data['promotion']));
 
 
