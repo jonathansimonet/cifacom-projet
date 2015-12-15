@@ -32,17 +32,17 @@ $projets = $projetMysqli->selectLast6();
 		<header>
 			<nav>
 				<div class="logo">
-					<a href="http://www.cifacom.com/">
+					<a href="index.php">
 						<img src="img/logo.png" alt="Cifacom">
 					</a>
 				</div>
 				<ul>
 					<li><a href="index.php" class="active">Accueil</a></li>
-					<li><a href="equipe-pedagogique.php">Equipe pédagogique</a></li>
 					<li><a href="formation-realisateur-audiovisuel.php">Formation Réalisateur</a></li>
 					<li><a href="formation-monteur-truquiste.php">Formation monteur truquiste</a></li>
 					<li><a href="projets-realises.php">Projets réalisés</a></li>
 					<li><a href="#contact">Contactez-nous</a></li>
+					<li><a href="equipe-pedagogique.php">Equipe pédagogique</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -95,11 +95,11 @@ $projets = $projetMysqli->selectLast6();
 		</section>
 		<section class="travaux">
 			<h2>Découvrez les travaux de nos étudiants</h2>
-			<a href="formation-realisateur-audiovisuel.php" class="realisateur">
+			<a href="projets-realises.php?f=real" class="realisateur">
 				<img src="img/realisateur.png" alt="">
 				Devenez
 				<span>Réalisateur</span>
-			</a><a href="formation-monteur-truquiste.php" class="truquiste">
+			</a><a href="projets-realises.php?f=mont" class="truquiste">
 				<img src="img/truquiste.png" alt="">
 				Devenez
 				<span>Monteur truquiste</span>

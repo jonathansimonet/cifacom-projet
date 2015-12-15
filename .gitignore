@@ -1,5 +1,6 @@
 vendor/
 composer.lock
+.idea/
 .idea/.name
 .idea/misc.xml
 admin/.idea/scopes/scope_settings.xml

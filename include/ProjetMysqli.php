@@ -7,8 +7,22 @@ class ProjetMysqli extends ModelMysqli {
 		return $result;
 	}
 
-	public function selectAll() {
-		$this->_stmt = $this->_mysqli->prepare("SELECT id, title, video_image_link FROM projets ORDER BY id DESC");
+	public function selectAll($formation = null) {
+		if ($formation == 'real')
+		{
+			$formation = 0;
+
+		}elseif($formation == 'mont')
+		{
+			$formation = 1;
+		}else
+		{
+			$this->_stmt = $this->_mysqli->prepare("SELECT id, title, video_image_link FROM projets ORDER BY id DESC");
+		}
+		if (!isset($this->_stmt))
+		{
+			$this->_stmt = $this->_mysqli->prepare("SELECT id, title, video_image_link FROM projets WHERE filiere = $formation ORDER BY id DESC");
+		}
 		$this->_stmt->execute();
 		$result = $this->bindResult();
 		return $result;
@@ -45,8 +59,23 @@ class ProjetMysqli extends ModelMysqli {
 
 	}
 
-	public function selectForCurrentPage($start, $epp){
-		$this->_stmt = $this->_mysqli->prepare("SELECT id, title, video_image_link FROM projets ORDER BY id DESC LIMIT $start, $epp");
+	public function selectForCurrentPage($start, $epp, $formation = null){
+		if ($formation == 'real')
+		{
+			$formation = 0;
+
+		}elseif($formation == 'mont')
+		{
+			$formation = 1;
+		}else
+		{
+			$this->_stmt = $this->_mysqli->prepare("SELECT id, title, video_image_link FROM projets ORDER BY id DESC LIMIT $start, $epp");
+		}
+		if (!isset($this->_stmt))
+		{
+			$this->_stmt = $this->_mysqli->prepare("SELECT id, title, video_image_link FROM projets WHERE filiere = $formation ORDER BY id DESC LIMIT $start, $epp");
+		}
+
 		$this->_stmt->execute();
 		$result = $this->bindResult();
 		return $result;
