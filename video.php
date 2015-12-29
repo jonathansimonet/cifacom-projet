@@ -84,10 +84,15 @@ function daylimotion_id_by_url($url){
 			<div class="videowrapper">
 				<?php if ($projet['type_video'] == 'YouTube'):?>
 					<?= preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i","<iframe width=\"800\" height=\"400\" src=\"//www.youtube.com/embed/$1\" frameborder=\"0\" allowfullscreen></iframe>",$projet['video_link']);?>
-				<?php elseif($projet['type_video'] == 'Dailymotion'):;?>
+				<?php elseif($projet['type_video'] == 'Dailymotion'):?>
 					<?php $idvideo = daylimotion_id_by_url($projet['video_link'])?>
 					<iframe frameborder="0" width="800" height="400" src="//www.dailymotion.com/embed/video/<?=$idvideo?>" allowfullscreen></iframe><br />
-				<?php endif?>
+				<?php elseif($projet['type_video'] == 'Vimeo'):?>
+					<?php if (preg_match('/https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)/',$projet['video_link'],$match)):?>
+						<?php $idvideo = $match['3'];?>
+						<iframe src="//player.vimeo.com/video/<?=$idvideo?>" width="800" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<?php endif;?>
+				<?php endif;?>
 			</div>
 		</section>
 		<section class="detail">

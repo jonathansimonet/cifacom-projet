@@ -239,7 +239,7 @@ $app->match('/projets/create', /**
 
 
         $form = $form->add('title', 'text', array('required' => true));
-        $form = $form->add('type_video', 'choice', array('required' => true, 'choices' => array('YouTube'=>'YouTube','Dailymotion'=>'Dailymotion'),));
+        $form = $form->add('type_video', 'choice', array('required' => true, 'choices' => array('YouTube'=>'YouTube','Dailymotion'=>'Dailymotion','Vimeo'=>'Vimeo')));
         $form = $form->add('filiere', 'choice', array('required' => true, 'choices' => array('0'=>'Realisateur','1'=>'Monteur/Truquiste')));
         $form = $form->add('video_link', 'text', array('required' => true));
         $form = $form->add('synopsis', 'textarea', array('required' => true));
@@ -290,6 +290,18 @@ $app->match('/projets/create', /**
 
                         }
                         break;
+
+                    case 'Vimeo':
+                        if(preg_match('/https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)/',$data['video_link'],$match))
+                        {
+                            if(!empty($match[3]))
+                            {
+                                $result = file_get_contents('https://vimeo.com/api/v2/video/'.$match[3].'.json');
+                                $urlarray = json_decode($result);
+                                $imageurl = $urlarray->{'thumbnail_large'};
+                            }
+                        }
+                    break;
 
                     default:
                         $imageurl = "";
@@ -407,7 +419,7 @@ $app->match('/projets/edit/{id}', function ($id) use ($app) {
 
     $form = $form->add('title', 'text', array('required' => true));
     $form = $form->add('filiere', 'choice', array('required' => true, 'choices' => array('0'=>'Realisateur','1'=>'Monteur/Truquiste')));
-    $form = $form->add('type_video', 'choice', array('required' => true, 'choices' => array('YouTube'=>'YouTube','Dailymotion'=>'Dailymotion'),));
+    $form = $form->add('type_video', 'choice', array('required' => true, 'choices' => array('YouTube'=>'YouTube','Dailymotion'=>'Dailymotion','Vimeo'=>'Vimeo')));
     $form = $form->add('video_link', 'text', array('required' => true));
     $form = $form->add('synopsis', 'textarea', array('required' => true));
     $form = $form->add('modules', 'choice', array(
@@ -457,8 +469,20 @@ $app->match('/projets/edit/{id}', function ($id) use ($app) {
                     }
                     break;
 
+                case 'Vimeo':
+                    if(preg_match('/https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)/',$data['video_link'],$match))
+                    {
+                        if(!empty($match[3]))
+                        {
+                            $result = file_get_contents('https://vimeo.com/api/v2/video/'.$match[3].'.json');
+                            $urlarray = json_decode($result,true);
+                            $imageurl = $urlarray[0]['thumbnail_large'];
+                        }
+                    }
+                    break;
+
                 default:
-                    $imageurl = "";
+                    $imageurl = NULL;
                     break;
 
 
