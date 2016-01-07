@@ -17,3 +17,5 @@ admin/.idea/modules.xml
 admin/.idea/.name
 .idea/workspace.xml
 .idea/scopes/scope_settings.xml
+include/prod.ini
+include/dev.ini

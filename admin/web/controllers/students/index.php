@@ -136,7 +136,7 @@ $app->match('/students/create', function () use ($app) {
 
 	$form = $form->add('firstname', 'text', array('required' => true));
 	$form = $form->add('name', 'text', array('required' => true));
-	$form = $form->add('website', 'text');
+	$form = $form->add('website', 'text',array('required' => false));
     $form = $form->add('filiere', 'choice', array('required' => true, 'choices' => array('0'=>'Realisateur','1'=>'Monteur/Truquiste')));
     $form = $form->add('promotion', 'number', array('required' => true));
 
@@ -205,7 +205,7 @@ $app->match('/students/edit/{id}', function ($id) use ($app) {
 
 	$form = $form->add('firstname', 'text', array('required' => true));
 	$form = $form->add('name', 'text', array('required' => true));
-	$form = $form->add('website', 'text', array('required' => true));
+	$form = $form->add('website', 'text',array('required' => false));
     $form = $form->add('filiere', 'choice', array('required' => true, 'choices' => array('0'=>'Realisateur','1'=>'Monteur/Truquiste')));
     $form = $form->add('promotion', 'number', array('required' => true));
 

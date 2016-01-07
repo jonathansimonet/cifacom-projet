@@ -69,8 +69,8 @@ $etudiants = $etudiantMysqli->selectAllRea();
 			<div class="list-etudiants">
 				<ul class="list-etudiants">
 					<?php foreach($etudiants as $v): ?>
-						<?php $url = $v['website'] ?>
-						<?php if(strpos($v['website'],'http') === FALSE): ?>
+						<?php $url = '#'?>
+						<?php if((strpos($v['website'],'http') === FALSE) && $v['website'] != '' ): ?>
 							<?php $url = 'http://'.$v['website'] ?>
 						<?php endif; ?>
 						<li class="etudiants"><a href="<?=$url?>" target="_blank"><?=$v['firstname']?> <?=$v['name']?></a></li>

@@ -15,6 +15,7 @@ class EtudiantMysqli extends ModelMysqli {
 	}
 
 	public function getWebSiteByid($id){
+		$url = '#';
 		if (is_array($id) && isset($id[0]))
 			$id = $id[0];
 		$this->_stmt = $this->_mysqli->prepare("SELECT website FROM students WHERE id=?");
@@ -22,7 +23,6 @@ class EtudiantMysqli extends ModelMysqli {
 		$this->bindParam($array);
 		$this->_stmt->execute();
 		$result = $this->bindResult();
-		$url = '';
 		if (isset($result[0]['website']))
 		{
 			if (strpos($result[0]['website'],'http')){
