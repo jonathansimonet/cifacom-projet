@@ -51,60 +51,136 @@ $projets = $projetMysqli->selectLast6();*/
 		</section>
 		<section id="equipe">
 			<h1>Notre équipe pédagogique</h1>
-			<div class="equipe">
-				<img src="img/equipe/1.jpg" alt="">
-				<div class="desc">
-					<div class="name">Adrien Quinn</div>
-					<div class="intervenant">Intervenant réalisateur</div>
+			<div class="left">
+				<h2>Réalisateur audiovisuel promo 2016</h2>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Laurent Dumas</div>
+						<div class="intervenant">Responsible Pédagogique</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Laurent Bébin</div>
+						<div class="intervenant">Intervenant Réalisateur</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Adrien Noël</div>
+						<div class="intervenant">Intervenant Prise de vue</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Laurent Dumas</div>
+						<div class="intervenant">Intervenant Montage</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Aurélien Bony</div>
+						<div class="intervenant">Intervenant Son</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Virginie Cady</div>
+						<div class="intervenant">Intervenante Scénario et Communication</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Manu Barbosa</div>
+						<div class="intervenant">Intervenant Web</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Norbert Cohen</div>
+						<div class="intervenant">Intervenant JRI et Web TV</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Jérôme Larnou</div>
+						<div class="intervenant">Intervenant VFX (After Effects)</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Michel Vilo</div>
+						<div class="intervenant">Intervenant Production</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Benoit Cassegrain</div>
+						<div class="intervenant">Intervenant Web Doc</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Karl Le Chevalier</div>
+						<div class="intervenant">Gestion du site Web</div>
+					</div>
 				</div>
 			</div>
-			<div class="equipe">
-				<img src="img/equipe/1.jpg" alt="">
-				<div class="desc">
-					<div class="name">Adrien Quinn</div>
-					<div class="intervenant">Intervenant réalisateur</div>
+			<div class="right">
+				<h2>Monteur truquiste promo 2016</h2>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Laurent Dumas</div>
+						<div class="intervenant">Responsible Pédagogique</div>
+					</div>
 				</div>
-			</div>
-			<div class="equipe">
-				<img src="img/equipe/2.jpg" alt="">
-				<div class="desc">
-					<div class="name">Maurice Archambault</div>
-					<div class="intervenant">Intervenant monteur</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Jérôme Larnou</div>
+						<div class="intervenant">Intervenant VFX - After Effects - Maya</div>
+					</div>
 				</div>
-			</div>
-			<div class="equipe">
-				<img src="img/equipe/2.jpg" alt="">
-				<div class="desc">
-					<div class="name">Maurice Archambault</div>
-					<div class="intervenant">Intervenant monteur</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Béatrice Agard (Certified Instructor AVID)</div>
+						<div class="intervenant">Intervenante Montage Documentaire AVID</div>
+					</div>
 				</div>
-			</div>
-			<div class="equipe">
-				<img src="img/equipe/3.jpg" alt="">
-				<div class="desc">
-					<div class="name">Bartlett DeGrasse</div>
-					<div class="intervenant">Intervenant camera</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Clara Della Torre</div>
+						<div class="intervenant">Intervenante Etalonnage Da Vinci Resolve</div>
+					</div>
 				</div>
-			</div>
-			<div class="equipe">
-				<img src="img/equipe/3.jpg" alt="">
-				<div class="desc">
-					<div class="name">Bartlett DeGrasse</div>
-					<div class="intervenant">Intervenant camera</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Ilaria Bellico (Apple Certified Trainer et Pro FCP)</div>
+						<div class="intervenant">Intervenante Montage Fiction FCP X</div>
+					</div>
 				</div>
-			</div>
-			<div class="equipe">
-				<img src="img/equipe/4.jpg" alt="">
-				<div class="desc">
-					<div class="name">Margueritte Aucoin</div>
-					<div class="intervenant">Intervenant camera</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Eric Vercelot</div>
+						<div class="intervenant">Intervenant Montage et VFX - ADOBE</div>
+					</div>
 				</div>
-			</div>
-			<div class="equipe">
-				<img src="img/equipe/4.jpg" alt="">
-				<div class="desc">
-					<div class="name">Margueritte Aucoin</div>
-					<div class="intervenant">Intervenant camera</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Amandine Bargain</div>
+						<div class="intervenant">Intervenante Pub et VFX – SMOKE</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Aurélien Bony</div>
+						<div class="intervenant">Intervenant Son – ProTools</div>
+					</div>
+				</div>
+				<div class="equipe">
+					<div class="desc">
+						<div class="name">Karl Le Chevalier</div>
+						<div class="intervenant">Gestion du site Web</div>
+					</div>
 				</div>
 			</div>
 		</section>
