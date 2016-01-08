@@ -117,9 +117,14 @@ function daylimotion_id_by_url($url){
 						<li><a target="_blank" href=<?=$website?>><?= preg_replace($pattern, '', $student); ?></a></li>
 					<?php endforeach ?>
 				</ul>
-				<span class="project-winners">
-					<<?=nl2br($projet['synopsis'])?>
-				</span>
+				<?php $prix = $projet['prix']?>
+				<?php if (!empty($prix)):?>
+					<span class="project-winners">
+						<h3>Prix</h3>
+						<br>
+						<?=nl2br($prix)?>
+					</span>
+				<?php endif?>
 			</div>
 		</section>
 		<section class="videos">
