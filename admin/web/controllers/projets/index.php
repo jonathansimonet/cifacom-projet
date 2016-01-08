@@ -251,7 +251,7 @@ $app->match('/projets/create', /**
                 'choices' => $selectusers,
             )
         );
-        $form = $form->add('prix', 'textarea');
+        $form = $form->add('prix', 'textarea', array('required' => false));
 
 
         $form = $form->getForm();
