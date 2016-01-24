@@ -69,7 +69,7 @@ $projets = $projetMysqli->selectForCurrentPage($start, $epp, $formation);
 		<link rel="stylesheet" href="css/index.css">
 		<style>
 			.videos h2 {
-				margin: 1em 0;
+				padding-top: 20px;
 				text-align: center;
 				font-size: 2em;
 			}
@@ -98,7 +98,10 @@ $projets = $projetMysqli->selectForCurrentPage($start, $epp, $formation);
 			</nav>
 		</header>
 		<section class="presentation">
-			<div style="background-image:url('img/slide1.jpg')"></div>
+			<div id="video_overlays"></div>
+			<video autoplay loop muted poster="img/slide1.jpg" id="bgvid">
+				<source src="img/home.mp4" type="video/mp4">
+			</video>
 			<h1>
 				<span>
 					<span>Bachelor</span>
@@ -106,18 +109,20 @@ $projets = $projetMysqli->selectForCurrentPage($start, $epp, $formation);
 				</span>
 			</h1>
 		</section>
-		<section class="videos">
-			<h2>Projets réalisés<?php if($labelform) echo ' en formation '.$labelform ?></h2>
-			<?php foreach($projets as $v): ?>
-			<a href="video.php?id=<?=$v['id']?>" class="video" style="background-image: url('<?=$v['video_image_link']?>')">
-				<div class="play">
-					<img src="img/play.png" alt="Play">
-				</div>
-				<h4><?=$v['title']?></h4>
-			</a>
-			<?php endforeach ?>
-			<?php echo paginate(curPageURL(), '?p=', $nbPages, $current); ?>
-		</section>
+		<div id="list_videos">
+			<section class="videos">
+				<h2>Projets réalisés<?php if($labelform) echo ' en formation '.$labelform ?></h2>
+				<?php foreach($projets as $v): ?>
+				<a href="video.php?id=<?=$v['id']?>" class="video" style="background-image: url('<?=$v['video_image_link']?>')">
+					<div class="play">
+						<img src="img/play.png" alt="Play">
+					</div>
+					<h4><?=$v['title']?></h4>
+				</a>
+				<?php endforeach ?>
+				<?php echo paginate(curPageURL(), '?p=', $nbPages, $current); ?>
+			</section>
+		</div>
 		<div class="clear"></div>
 		<footer>
 			<div class="map"></div>

@@ -27,7 +27,7 @@ $etudiants = $etudiantMysqli->selectAllMt();
 		<link rel="stylesheet" href="css/etudiants.css">
 		<style>
 			.videos h2 {
-				margin: 1em 0;
+				padding-top: 20px;
 				text-align: center;
 				font-size: 2em;
 			}
@@ -56,7 +56,10 @@ $etudiants = $etudiantMysqli->selectAllMt();
 			</nav>
 		</header>
 		<section class="presentation">
-			<div style="background-image:url('img/slide1.jpg')"></div>
+			<div id="video_overlays"></div>
+			<video autoplay loop muted poster="img/slide1.jpg" id="bgvid">
+				<source src="img/home.mp4" type="video/mp4">
+			</video>
 			<h1>
 				<span>
 					<span>Bachelor</span>

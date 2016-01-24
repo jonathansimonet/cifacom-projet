@@ -27,7 +27,7 @@ $etudiants = $etudiantMysqli->selectAllRea();
 		<link rel="stylesheet" href="css/etudiants.css">
 		<style>
 			.videos h2 {
-				margin: 1em 0;
+				padding-top: 20px;
 				text-align: center;
 				font-size: 2em;
 			}
@@ -56,7 +56,10 @@ $etudiants = $etudiantMysqli->selectAllRea();
 			</nav>
 		</header>
 		<section class="presentation">
-			<div style="background-image:url('img/slide1.jpg')"></div>
+			<div id="video_overlays"></div>
+			<video autoplay loop muted poster="img/slide1.jpg" id="bgvid">
+				<source src="img/home.mp4" type="video/mp4">
+			</video>
 			<h1>
 				<span>
 					<span>Bachelor</span>
@@ -64,20 +67,22 @@ $etudiants = $etudiantMysqli->selectAllRea();
 				</span>
 			</h1>
 		</section>
-		<section class="videos">
-			<h2>Etudiants en formation réalisateur audiovisuel</h2>
-			<div class="list-etudiants">
-				<ul class="list-etudiants">
-					<?php foreach($etudiants as $v): ?>
-						<?php $url = '#'?>
-						<?php if((strpos($v['website'],'http') === FALSE) && $v['website'] != '' ): ?>
-							<?php $url = 'http://'.$v['website'] ?>
-						<?php endif; ?>
-						<li class="etudiants"><a href="<?=$url?>" target="_blank"><?=$v['firstname']?> <?=$v['name']?></a></li>
-					<?php endforeach ?>
-				</ul>
-			</div>
-		</section>
+		<div id="list_videos">
+			<section class="videos">
+				<h2>Etudiants en formation réalisateur audiovisuel</h2>
+				<div class="list-etudiants">
+					<ul class="list-etudiants">
+						<?php foreach($etudiants as $v): ?>
+							<?php $url = '#'?>
+							<?php if((strpos($v['website'],'http') === FALSE) && $v['website'] != '' ): ?>
+								<?php $url = 'http://'.$v['website'] ?>
+							<?php endif; ?>
+							<li class="etudiants"><a href="<?=$url?>" target="_blank"><?=$v['firstname']?> <?=$v['name']?></a></li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+			</section>
+		</div>
 		<div class="clear"></div>
 		<footer>
 			<div class="map"></div>
